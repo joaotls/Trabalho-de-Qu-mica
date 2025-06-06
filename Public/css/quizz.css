@@ -1,0 +1,47 @@
+
+
+/* Main Content Styles */
+main {
+  padding: 200px;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(2, 2, 2, 0.1);
+}
+
+/* Question Styles */
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+/* Button Styles */
+button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f87;
+}
+
+/* Result Styles */
+#resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
