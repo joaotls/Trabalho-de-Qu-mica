@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudos de Química</title>
+  <link rel="stylesheet" href="css/quizz.css" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Estudos de Química</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ligacoes.html">Ligações Químicas</a></li>
+        <li><a href="estados.html">Estados da Matéria</a></li>
+        <li><a href="tabela.html">Tabela Periódica </a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+
+  <div class="quiz-container">
+    <h1>Quiz de Química</h1>
+
+    <form id="quizForm">
+      <!-- Pergunta 1 -->
+      <div class="question">
+        <p>1. Qual é o elemento com símbolo 'Na'?</p>
+        <label><input type="radio" name="q1" value="errado"> Nitrogênio</label><br>
+        <label><input type="radio" name="q1" value="certo"> Sódio</label><br>
+        <label><input type="radio" name="q1" value="errado"> Nobre</label>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="question">
+        <p>2. Qual tipo de ligação ocorre entre dois ametais?</p>
+        <label><input type="radio" name="q2" value="errado"> Iônica</label><br>
+        <label><input type="radio" name="q2" value="certo"> Covalente</label><br>
+        <label><input type="radio" name="q2" value="errado"> Metálica</label>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="question">
+        <p>3. Qual estado da matéria tem forma e volume definidos?</p>
+        <label><input type="radio" name="q3" value="certo"> Sólido</label><br>
+        <label><input type="radio" name="q3" value="errado"> Líquido</label><br>
+        <label><input type="radio" name="q3" value="errado"> Gasoso</label>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="question">
+        <p>4. Qual é o gás nobre com símbolo 'He'?</p>
+        <label><input type="radio" name="q4" value="certo"> Hélio</label><br>
+        <label><input type="radio" name="q4" value="errado"> Hidrogênio</label><br>
+        <label><input type="radio" name="q4" value="errado"> Hálio</label>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="question">
+        <p>5. O que é sublimação?</p>
+        <label><input type="radio" name="q5" value="certo"> Passagem do sólido diretamente para o gasoso</label><br>
+        <label><input type="radio" name="q5" value="errado"> Gasoso para líquido</label><br>
+        <label><input type="radio" name="q5" value="errado"> Líquido para sólido</label>
+      </div>
+
+      <button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function corrigirQuiz() {
+      const respostas = document.querySelectorAll('input[type=radio]:checked');
+      let pontos = 0;
+
+      respostas.forEach(resposta => {
+        if (resposta.value === "certo") {
+          pontos++;
+        }
+      });
+
+      const total = 5;
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `Você acertou ${pontos} de ${total} questões.`;
+
+      if (pontos === total) {
+        resultado.innerHTML += "<br>🎉 Excelente! Você mandou muito bem!";
+      } else if (pontos >= 3) {
+        resultado.innerHTML += "<br>👍 Bom trabalho! Mas você pode melhorar!";
+      } else {
+        resultado.innerHTML += "<br>👀 Que tal revisar um pouco mais?";
+      }
+    }
+  </script>
+
+</body>
+</html>
